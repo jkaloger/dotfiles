@@ -7,4 +7,5 @@ in
 shared-packages
 ++ [
   aerospace
+  ghostty-bin
 ]

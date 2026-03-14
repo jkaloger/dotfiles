@@ -6,10 +6,8 @@ with pkgs;
   cargo
   clippy
   deno
-  direnv
   fzf
   gh
-  ghostty
   gum
   neovim
   nixfmt-rfc-style

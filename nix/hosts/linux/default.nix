@@ -1,8 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 
-let
-  user = "jack";
-in
 {
   imports = [
     ../../modules/linux

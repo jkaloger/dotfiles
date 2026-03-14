@@ -3,12 +3,10 @@
   pkgs,
   lib,
   home-manager,
+  user,
   ...
 }:
 
-let
-  user = "jkaloger";
-in
 {
   users.users.${user} = {
     name = "${user}";

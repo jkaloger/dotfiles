@@ -1,8 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 
-let
-  user = "jkaloger";
-in
 {
   imports = [
     ../../modules/darwin
