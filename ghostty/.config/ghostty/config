@@ -1,0 +1,34 @@
+theme = Duckbones
+
+macos-titlebar-style = hidden
+window-decoration = none
+background-opacity = 1
+background-blur = 80
+
+window-padding-x = 10
+window-padding-y = 10
+
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+keybind = ctrl+tab=text:\x01n
+keybind = cmd+w=text:\x01x
+keybind = cmd+n=text:\x01c
+keybind = cmd+t=text:\x01c
+keybind = cmd+k=text:\x01k
+keybind = cmd+j=text:\x01j
+keybind = alt+q=text:\x01d
+
+keybind = cmd+digit_1=text:\x011
+keybind = cmd+digit_2=text:\x012
+keybind = cmd+digit_3=text:\x013
+keybind = cmd+digit_4=text:\x014
+keybind = cmd+digit_5=text:\x015
+keybind = cmd+digit_6=text:\x016
+keybind = cmd+digit_7=text:\x017
+keybind = cmd+digit_8=text:\x018
+keybind = cmd+digit_9=text:\x019
+
+image-storage-limit = 320000000
+
+font-size = 16
+keybind = shift+enter=text:\n
