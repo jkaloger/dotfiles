@@ -30,3 +30,6 @@ claude/.claude/accessibility-developer-tasks.md
 
 # nix build output
 nix/result
+
+# antigen
+**/antigen.zsh
