@@ -12,14 +12,15 @@ with pkgs;
   gum
   neovim
   nixfmt-rfc-style
+  opencode
   ripgrep
   rust-analyzer
   rustc
   rustfmt
   sesh
   shellcheck
-  stylua
   slides
   stow
+  stylua
   zoxide
 ]
