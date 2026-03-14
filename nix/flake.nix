@@ -52,6 +52,7 @@
         in
           home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
+            extraSpecialArgs = { user = "jack"; };
             modules = [
               ./hosts/linux
             ];
@@ -59,12 +60,9 @@
       );
       darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (
         system:
-        let
-          user = "jkaloger";
-        in
         darwin.lib.darwinSystem {
           inherit system;
-          specialArgs = inputs;
+          specialArgs = inputs // { inherit user; };
           modules = [
             home-manager.darwinModules.home-manager
             nix-homebrew.darwinModules.nix-homebrew
