@@ -1,18 +1,7 @@
 return {
   'stevearc/conform.nvim',
-  dependencies = {
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
-  },
   opts = {},
   config = function()
-    -- Ensure formatters are installed via Mason
-    require('mason-tool-installer').setup {
-      ensure_installed = {
-        'eslint_d',
-        'prettierd',
-      },
-    }
-
     require('conform').setup({
       formatters_by_ft = {
         javascript = { "eslint_d", "prettierd" },
