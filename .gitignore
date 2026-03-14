@@ -1,0 +1,32 @@
+.DS_Store
+
+# tmux plugins (managed by tpm)
+tmux/.config/tmux/plugins/
+
+# node_modules in skills
+**/node_modules/
+
+# claude runtime state
+claude/.claude/tasks/
+claude/.claude/cache/
+claude/.claude/backups/
+claude/.claude/debug/
+claude/.claude/telemetry/
+claude/.claude/statsig/
+claude/.claude/history.jsonl
+claude/.claude/session-env/
+claude/.claude/shell-snapshots/
+claude/.claude/paste-cache/
+claude/.claude/plans/
+claude/.claude/todos/
+claude/.claude/plugins/
+claude/.claude/projects/
+claude/.claude/file-history/
+claude/.claude/mcp-needs-auth-cache.json
+claude/.claude/policy-limits.json
+claude/.claude/stats-cache.json
+claude/.claude/statusline-command.sh
+claude/.claude/accessibility-developer-tasks.md
+
+# nix build output
+nix/result
