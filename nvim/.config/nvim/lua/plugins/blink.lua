@@ -14,8 +14,7 @@ return {
         end
         return 'make install_jsregexp'
       end)(),
-      dependencies = {
-      },
+      dependencies = {},
       opts = {},
     },
     'folke/lazydev.nvim',
@@ -33,7 +32,7 @@ return {
 
     completion = {
       documentation = { auto_show = true, auto_show_delay_ms = 500 },
-      trigger = { prefetch_on_insert = false }
+      trigger = { prefetch_on_insert = false },
     },
 
     sources = {
@@ -44,7 +43,7 @@ return {
     },
 
     snippets = { preset = 'luasnip' },
-    fuzzy = { implementation = 'prefer_rust_with_warning' },
+    fuzzy = { implementation = 'lua' },
     signature = { enabled = true },
   },
 }

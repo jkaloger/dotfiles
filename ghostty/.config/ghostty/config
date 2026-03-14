@@ -1,7 +1,7 @@
 theme = Duckbones
 
 macos-titlebar-style = hidden
-window-decoration = none
+# window-decoration = none
 background-opacity = 1
 background-blur = 80
 
@@ -30,5 +30,5 @@ keybind = cmd+digit_9=text:\x019
 
 image-storage-limit = 320000000
 
-font-size = 16
+font-size = 14
 keybind = shift+enter=text:\n
