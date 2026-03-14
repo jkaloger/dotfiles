@@ -7,5 +7,4 @@ in
 shared-packages
 ++ [
   aerospace
-  sketchybar
 ]

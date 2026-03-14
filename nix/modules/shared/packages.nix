@@ -2,32 +2,21 @@
 
 with pkgs;
 [
-  alacritty
-  direnv
-  neovim
-  fzf
-  television
-  glow
-  zellij
-  lazysql
-  sesh
-  gum
-  stow
-
-  watchman
-
-  nixfmt-rfc-style
-
-  rustc
-  rust-analyzer
-  rustfmt
+  act
   cargo
   clippy
-
-  gh
-  act
-
   deno
-
+  direnv
+  fzf
+  gh
+  ghostty
+  gum
+  neovim
+  nixfmt-rfc-style
+  rust-analyzer
+  rustc
+  rustfmt
+  sesh
   slides
+  stow
 ]
