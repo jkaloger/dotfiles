@@ -5,11 +5,13 @@ with pkgs;
   act
   cargo
   clippy
+  d2
   deno
   fzf
   gh
   glow
   gum
+  lazygit
   neovim
   nixfmt-rfc-style
   opencode
