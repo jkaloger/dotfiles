@@ -81,7 +81,7 @@ setup_worktree() {
 
 export -f setup_worktree
 gum spin --spinner minidot --title "Setting up $name from $base..." -- \
-  bash -c "$(declare -f setup_worktree); setup_worktree '$repo_root' '$worktree_dir' '$name' '$base'"
+  bash -c "$(declare -f setup_worktree); setup_worktree \"\$1\" \"\$2\" \"\$3\" \"\$4\"" _ "$repo_root" "$worktree_dir" "$name" "$base"
 
 tmux new-session -d -s "$project/$name" -c "$worktree_dir"
 
