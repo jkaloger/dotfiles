@@ -12,6 +12,7 @@ with pkgs;
   glow
   gum
   lazygit
+  mermaid-cli
   neovim
   nixfmt-rfc-style
   opencode

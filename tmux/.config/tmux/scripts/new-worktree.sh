@@ -8,13 +8,14 @@ C_DIM="8"
 C_ERR="1"
 C_OK="2"
 
-repo_root=$(git rev-parse --show-toplevel 2>/dev/null)
-if [ -z "$repo_root" ]; then
+if ! git rev-parse --show-toplevel &>/dev/null; then
   gum style --foreground="$C_ERR" "❌ Not in a git repository"
   sleep 1
   exit 1
 fi
 
+# Always resolve to the original clone, not a worktree
+repo_root=$(git worktree list --porcelain | head -1 | sed 's/^worktree //')
 project=$(basename "$repo_root")
 
 echo ""
@@ -22,10 +23,8 @@ gum style --foreground="$C_ACCENT" --bold --border=rounded --border-foreground="
   "🌲 New Worktree :: $project"
 echo ""
 
-name=$(gum input \
-  --placeholder="worktree name" \
-  --width=40)
-[ -z "$name" ] && exit 0
+mode=$(gum choose "New branch" "Existing branch")
+[ -z "$mode" ] && exit 0
 
 # Branches with main/master first
 branches=$(git branch -a --format='%(refname:short)' | sed 's|^origin/||' | sort -u | grep -v '^HEAD$')
@@ -33,12 +32,32 @@ main_branch=$(echo "$branches" | grep -E '^(main|master)$' | head -1)
 other_branches=$(echo "$branches" | grep -vE '^(main|master)$')
 ordered_branches=$(printf '%s\n%s' "$main_branch" "$other_branches")
 
-base=$(echo "$ordered_branches" | gum filter \
-  --fuzzy \
-  --placeholder="base" \
-  --height=10 \
-  --no-strip-ansi)
-[ -z "$base" ] && exit 0
+if [ "$mode" = "New branch" ]; then
+  name=$(gum input \
+    --placeholder="worktree name" \
+    --width=40)
+  [ -z "$name" ] && exit 0
+
+  base=$(echo "$ordered_branches" | gum filter \
+    --fuzzy \
+    --placeholder="base" \
+    --height=10 \
+    --no-strip-ansi)
+  [ -z "$base" ] && exit 0
+
+  wt_mode="new"
+else
+  branch=$(echo "$ordered_branches" | gum filter \
+    --fuzzy \
+    --placeholder="branch" \
+    --height=10 \
+    --no-strip-ansi)
+  [ -z "$branch" ] && exit 0
+
+  name=$(echo "$branch" | sed 's|/|-|g')
+  base="$branch"
+  wt_mode="existing"
+fi
 
 worktree_dir="$WORKTREE_ROOT/$project/$name"
 
@@ -52,9 +71,13 @@ fi
 echo ""
 
 setup_worktree() {
-  local repo="$1" dest="$2" wt_name="$3" wt_base="$4"
+  local repo="$1" dest="$2" wt_name="$3" wt_base="$4" wt_mode="$5"
 
-  git worktree add -b "$wt_name" "$dest" "$wt_base" 2>/dev/null
+  if [ "$wt_mode" = "new" ]; then
+    git worktree add -b "$wt_name" "$dest" "$wt_base" 2>/dev/null
+  else
+    git worktree add "$dest" "$wt_base" 2>/dev/null
+  fi
 
   (cd "$repo" && find . -name '.env*' \
     -not -path '*/node_modules/*' \
@@ -81,9 +104,8 @@ setup_worktree() {
 
 export -f setup_worktree
 gum spin --spinner minidot --title "Setting up $name from $base..." -- \
-  bash -c "$(declare -f setup_worktree); setup_worktree \"\$1\" \"\$2\" \"\$3\" \"\$4\"" _ "$repo_root" "$worktree_dir" "$name" "$base"
+  bash -c "$(declare -f setup_worktree); setup_worktree \"\$1\" \"\$2\" \"\$3\" \"\$4\" \"\$5\"" _ "$repo_root" "$worktree_dir" "$name" "$base" "$wt_mode"
 
 tmux new-session -d -s "$project/$name" -c "$worktree_dir"
 
 sesh connect "$project/$name"
-
