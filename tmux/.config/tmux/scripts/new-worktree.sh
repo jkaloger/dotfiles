@@ -94,12 +94,11 @@ setup_worktree() {
     done
   fi
 
-  (cd "$repo" && find . -name 'node_modules' -maxdepth 3 \
-    -not -path '*/node_modules/*/node_modules') | while read -r d; do
-    local target="$dest/$d"
-    mkdir -p "$(dirname "$target")"
-    ln -sf "$(cd "$repo" && realpath "$d")" "$target"
-  done
+  if [ -f "$dest/pnpm-lock.yaml" ]; then
+    (cd "$dest" && pnpm install --frozen-lockfile --prefer-offline 2>/dev/null) || true
+  elif [ -f "$dest/package-lock.json" ]; then
+    (cd "$dest" && npm ci --prefer-offline 2>/dev/null) || true
+  fi
 }
 
 export -f setup_worktree
