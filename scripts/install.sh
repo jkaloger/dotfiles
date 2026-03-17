@@ -11,6 +11,7 @@ packages=(
   git
   lazygit
   aerospace
+  btop
 )
 
 echo "🏠 Stowing dotfiles from $DOTFILES_DIR"
