@@ -3,6 +3,8 @@
 with pkgs;
 [
   act
+  astroterm
+  btop
   cargo
   clippy
   d2
@@ -14,7 +16,7 @@ with pkgs;
   lazygit
   mermaid-cli
   neovim
-  nixfmt-rfc-style
+  nixfmt
   opencode
   ripgrep
   rust-analyzer
