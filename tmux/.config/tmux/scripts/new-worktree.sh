@@ -32,8 +32,8 @@ echo ""
 mode=$(gum choose "New branch" "Existing branch")
 [ -z "$mode" ] && exit 0
 
-# Branches with main/master first
-branches=$(git branch -a --format='%(refname:short)' | sed 's|^origin/||' | sort -u | grep -v '^HEAD$')
+# Branches with main/master first, ordered by last commit date
+branches=$(git branch -a --format='%(committerdate:iso8601)	%(refname:short)' | sed 's|	origin/|	|' | sort -t'	' -k2 -u | sort -t'	' -k1,1r | cut -f2 | grep -v '^HEAD$')
 main_branch=$(echo "$branches" | grep -E '^(main|master)$' | head -1)
 other_branches=$(echo "$branches" | grep -vE '^(main|master)$')
 ordered_branches=$(printf '%s\n%s' "$main_branch" "$other_branches")
