@@ -7,8 +7,12 @@ gaps.inner.horizontal = 24
 gaps.inner.vertical =   24
 gaps.outer.left =       24
 gaps.outer.bottom =     24
-gaps.outer.top =        24
+gaps.outer.top =        40
 gaps.outer.right =      24
+
+exec-on-workspace-change = ['/bin/bash', '-c',
+  'export PATH="/run/current-system/sw/bin:$HOME/.nix-profile/bin:$PATH" && sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
 
 [mode.main.binding]
 alt-h = 'focus left'

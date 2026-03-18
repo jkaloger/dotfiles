@@ -11,6 +11,7 @@ packages=(
   git
   lazygit
   aerospace
+  sketchybar
   btop
 )
 
