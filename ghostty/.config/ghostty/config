@@ -15,6 +15,19 @@ keybind = cmd+n=text:\x01c
 keybind = cmd+t=text:\x01c
 keybind = cmd+k=text:\x01k
 keybind = cmd+j=text:\x01j
+keybind = cmd+left=text:\x01h
+keybind = cmd+right=text:\x01l
+keybind = cmd+up=text:\x01u
+keybind = cmd+down=text:\x01b
+keybind = cmd+d=text:\x01v
+keybind = cmd+shift+d=text:\x01S
+keybind = cmd+enter=text:\x01z
+keybind = cmd+comma=text:\x01,
+keybind = cmd+f=text:\x01F
+keybind = cmd+shift+left_bracket=text:\x01p
+keybind = cmd+shift+right_bracket=text:\x01n
+keybind = cmd+shift+n=text:\x01N
+keybind = cmd+slash=text:\x01?
 keybind = alt+q=text:\x01d
 
 keybind = cmd+digit_1=text:\x011

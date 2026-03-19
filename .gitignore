@@ -33,3 +33,6 @@ nix/result
 
 # antigen
 **/antigen.zsh
+
+# local docs
+docs/

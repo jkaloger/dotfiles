@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# spaceduck theme
+SD_BG=0xff0f111b
+SD_FG=0xffecf0c1
+SD_PURPLE=0xff7a5ccc
+SD_GREEN=0xff5ccc96
+SD_RED=0xffe33400
+SD_YELLOW=0xffb3a1e6
+SD_CYAN=0xff00a3cc
+SD_ORANGE=0xffe39400
+SD_MAGENTA=0xffce6f8f
+SD_DARK_PURPLE=0xff30365F
+SD_FOREGROUND=0x80ecf0c1

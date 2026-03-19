@@ -12,12 +12,14 @@ with pkgs;
   fzf
   gh
   glow
+  go
   gum
   lazygit
   mermaid-cli
   neovim
   nixfmt
   opencode
+  python314
   ripgrep
   rust-analyzer
   rustc
@@ -27,5 +29,7 @@ with pkgs;
   slides
   stow
   stylua
+  uv
+  zig
   zoxide
 ]
