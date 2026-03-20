@@ -7,6 +7,9 @@
   ...
 }:
 
+let
+  now-playing-listener = pkgs.callPackage ./pkgs/now-playing-listener { };
+in
 {
   users.users.${user} = {
     name = "${user}";
@@ -44,6 +47,16 @@
   services = {
     sketchybar = {
       enable = true;
+    };
+  };
+
+  launchd.user.agents.now-playing-listener = {
+    serviceConfig = {
+      ProgramArguments = [ "${now-playing-listener}/bin/now-playing-listener" ];
+      KeepAlive = true;
+      RunAtLoad = true;
+      StandardOutPath = "/tmp/now-playing-listener.log";
+      StandardErrorPath = "/tmp/now-playing-listener.log";
     };
   };
 }

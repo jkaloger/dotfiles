@@ -36,6 +36,7 @@ sketchybar --default \
   icon.padding_right=4
 
 sketchybar --add event aerospace_workspace_change
+sketchybar --add event now_playing_change
 
 for i in $(seq 1 3); do
   sketchybar --add item space."$i" left \
@@ -55,15 +56,38 @@ sketchybar --add item front_app left \
     script="$PLUGIN_DIR/front_app.sh" \
   --subscribe front_app front_app_switched
 
+sketchybar --add item tmux_session left \
+  --set tmux_session \
+    icon="" \
+    icon.color=$SD_PURPLE \
+    label.color=$SD_FOREGROUND \
+    update_freq=5 \
+    script="$PLUGIN_DIR/tmux_session.sh" \
+  --subscribe tmux_session front_app_switched
+
 sketchybar --add item clock center \
   --set clock \
     update_freq=30 \
     script="$PLUGIN_DIR/clock.sh"
+
+sketchybar --add item now_playing center \
+  --set now_playing \
+    icon="󰎆" \
+    icon.color=$SD_GREEN \
+    script="$PLUGIN_DIR/now_playing.sh" \
+  --subscribe now_playing now_playing_change
 
 sketchybar --add item battery right \
   --set battery \
     update_freq=120 \
     script="$PLUGIN_DIR/battery.sh" \
   --subscribe battery system_woke power_source_change
+
+sketchybar --add item calendar right \
+  --set calendar \
+    icon="󰃭" \
+    icon.color=$SD_CYAN \
+    update_freq=60 \
+    script="$PLUGIN_DIR/calendar.sh"
 
 sketchybar --update
