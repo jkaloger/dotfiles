@@ -83,11 +83,4 @@ sketchybar --add item battery right \
     script="$PLUGIN_DIR/battery.sh" \
   --subscribe battery system_woke power_source_change
 
-sketchybar --add item calendar right \
-  --set calendar \
-    icon="󰃭" \
-    icon.color=$SD_CYAN \
-    update_freq=60 \
-    script="$PLUGIN_DIR/calendar.sh"
-
 sketchybar --update
