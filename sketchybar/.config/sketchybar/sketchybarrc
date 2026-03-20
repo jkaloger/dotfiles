@@ -83,4 +83,34 @@ sketchybar --add item battery right \
     script="$PLUGIN_DIR/battery.sh" \
   --subscribe battery system_woke power_source_change
 
+sketchybar --add item net right \
+  --set net \
+    icon="󰛳" \
+    icon.color=$SD_GREEN \
+    label.color=$SD_FOREGROUND \
+    padding_left=10 \
+    padding_right=10 \
+    update_freq=3 \
+    script="$PLUGIN_DIR/net.sh"
+
+sketchybar --add item mem right \
+  --set mem \
+    icon="󰍛" \
+    icon.color=$SD_PURPLE \
+    label.color=$SD_FOREGROUND \
+    padding_left=10 \
+    padding_right=10 \
+    update_freq=5 \
+    script="$PLUGIN_DIR/mem.sh"
+
+sketchybar --add item cpu right \
+  --set cpu \
+    icon="" \
+    icon.color=$SD_CYAN \
+    label.color=$SD_FOREGROUND \
+    padding_left=10 \
+    padding_right=10 \
+    update_freq=5 \
+    script="$PLUGIN_DIR/cpu.sh"
+
 sketchybar --update
