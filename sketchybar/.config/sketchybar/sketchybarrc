@@ -60,6 +60,7 @@ sketchybar --add item front_app left \
 sketchybar --add item tmux_session left \
   --set tmux_session \
     icon="" \
+    icon.font.size=24 \
     icon.color=$SD_PURPLE \
     label.color=$SD_FOREGROUND \
     update_freq=5 \
@@ -69,6 +70,7 @@ sketchybar --add item tmux_session left \
 sketchybar --add item claude left \
   --set claude \
     icon="󰚩" \
+    icon.font.size=24 \
     icon.color=$SD_CYAN \
     label.color=$SD_FOREGROUND \
     drawing=off \
@@ -84,6 +86,7 @@ sketchybar --add item clock center \
 sketchybar --add item now_playing center \
   --set now_playing \
     icon="󰎆" \
+    icon.font.size=24 \
     icon.color=$SD_GREEN \
     script="$PLUGIN_DIR/now_playing.sh" \
   --subscribe now_playing now_playing_change
@@ -97,6 +100,7 @@ sketchybar --add item battery right \
 sketchybar --add item net right \
   --set net \
     icon="󰛳" \
+    icon.font.size=24 \
     icon.color=$SD_GREEN \
     label.color=$SD_FOREGROUND \
     padding_left=10 \
@@ -106,7 +110,8 @@ sketchybar --add item net right \
 
 sketchybar --add item mem right \
   --set mem \
-    icon="󰍛" \
+    icon="" \
+    icon.font.size=24 \
     icon.color=$SD_PURPLE \
     label.color=$SD_FOREGROUND \
     padding_left=10 \
@@ -116,7 +121,8 @@ sketchybar --add item mem right \
 
 sketchybar --add item cpu right \
   --set cpu \
-    icon="" \
+    icon="󰍛" \
+    icon.font.size=24 \
     icon.color=$SD_CYAN \
     label.color=$SD_FOREGROUND \
     padding_left=10 \
