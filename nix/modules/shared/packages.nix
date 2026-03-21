@@ -29,6 +29,7 @@ with pkgs;
   slides
   stow
   stylua
+  tmux
   uv
   zig
   zoxide
