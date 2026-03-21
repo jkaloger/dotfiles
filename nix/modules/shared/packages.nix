@@ -14,6 +14,7 @@ with pkgs;
   glow
   go
   gum
+  just
   lazygit
   mermaid-cli
   neovim
