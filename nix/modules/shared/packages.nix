@@ -9,6 +9,7 @@ with pkgs;
   clippy
   d2
   deno
+  fnm
   fzf
   gh
   glow

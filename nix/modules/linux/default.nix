@@ -12,5 +12,6 @@
     shared-packages
     ++ [
       ghostty
+      socat
     ];
 }
