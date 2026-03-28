@@ -13,6 +13,7 @@ packages=(
   aerospace
   sketchybar
   btop
+  claude
 )
 
 echo "🏠 Stowing dotfiles from $DOTFILES_DIR"

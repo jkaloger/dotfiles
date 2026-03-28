@@ -3,6 +3,7 @@
 with pkgs;
 [
   act
+  ast-grep
   astroterm
   btop
   cargo
@@ -15,6 +16,7 @@ with pkgs;
   glow
   go
   gum
+  jq
   just
   lazygit
   mermaid-cli
