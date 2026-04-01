@@ -10,6 +10,7 @@ if [ ! -d "$CLAUDE_DIR" ] || [ -z "$(ls -A "$CLAUDE_DIR" 2>/dev/null)" ]; then
 fi
 
 LABELS=""
+SEEN_PIDS=""
 for f in "$CLAUDE_DIR"/*; do
   [ -f "$f" ] || continue
   CONTENT=$(cat "$f" 2>/dev/null)
@@ -23,6 +24,13 @@ for f in "$CLAUDE_DIR"/*; do
   fi
 
   [ -z "$PROJECT" ] && continue
+
+  # Deduplicate by PID — subagents share a parent process
+  case "$SEEN_PIDS" in
+    *":$PID:"*) continue ;;
+  esac
+  SEEN_PIDS="$SEEN_PIDS:$PID:"
+
   if [ -n "$LABELS" ]; then
     LABELS="$LABELS, $PROJECT"
   else
