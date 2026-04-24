@@ -10,6 +10,7 @@ with pkgs;
   clippy
   d2
   deno
+  diffnav
   fnm
   fzf
   gh
@@ -22,6 +23,7 @@ with pkgs;
   mermaid-cli
   neovim
   nixfmt
+  ollama
   opencode
   python314
   ripgrep

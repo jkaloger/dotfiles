@@ -59,4 +59,17 @@ in
       StandardErrorPath = "/tmp/now-playing-listener.log";
     };
   };
+
+  launchd.user.agents.ollama = {
+    serviceConfig = {
+      ProgramArguments = [
+        "${pkgs.ollama}/bin/ollama"
+        "serve"
+      ];
+      KeepAlive = true;
+      RunAtLoad = true;
+      StandardOutPath = "/tmp/ollama.log";
+      StandardErrorPath = "/tmp/ollama.log";
+    };
+  };
 }

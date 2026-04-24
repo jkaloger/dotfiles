@@ -23,3 +23,7 @@ If code has unnecessary comments (comments that restate what the code does), fla
 # Code Comments
 
 Only comment when articulating something not implied by the code itself. Never add comments like `# Process each item` above a for loop.
+
+# Sandbox
+
+You're running in sandbox mode. If you come up against anything you cannot run but NEED to progress, finish everything you can and then stop and ask me to run it.
