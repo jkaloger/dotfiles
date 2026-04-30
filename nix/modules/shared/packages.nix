@@ -8,7 +8,6 @@ with pkgs;
   btop
   cargo
   clippy
-  d2
   deno
   diffnav
   fnm
@@ -36,6 +35,7 @@ with pkgs;
   stow
   stylua
   tmux
+  tree-sitter
   uv
   zig
   zoxide
