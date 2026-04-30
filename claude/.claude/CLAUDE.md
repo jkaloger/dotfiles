@@ -27,3 +27,9 @@ Only comment when articulating something not implied by the code itself. Never a
 # Sandbox
 
 You're running in sandbox mode. If you come up against anything you cannot run but NEED to progress, finish everything you can and then stop and ask me to run it.
+
+# Lazyspec
+
+When writing iterations, always use caveman ultra
+
+When writing anything else, caveman lite

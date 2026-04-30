@@ -101,50 +101,43 @@ return {
       },
     }
 
-    local capabilities = require('blink.cmp').get_lsp_capabilities()
+    vim.lsp.config('*', {
+      capabilities = require('blink.cmp').get_lsp_capabilities(),
+    })
 
-    local servers = {
-      clangd = {},
-      tailwindcss = {},
-      rust_analyzer = {
-        ["rust-analyzer"] = {
-          check = {
-            command = "clippy",
-          },
+    vim.lsp.config('rust_analyzer', {
+      settings = {
+        ['rust-analyzer'] = {
+          check = { command = 'clippy' },
         },
       },
-      ts_ls = {},
-      astro = {},
-      svelte = {
-        filetypes = { 'svelte' }
-      },
-      phpactor = {
-        filetypes = { 'php' }
-      },
-      lua_ls = {
+    })
+
+    vim.lsp.config('lua_ls', {
+      settings = {
         Lua = {
           workspace = { checkThirdParty = false },
           telemetry = { enable = false },
           diagnostics = { disable = { 'missing-fields' } },
         },
       },
-      stylua = {},
-    }
-
-    local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, { 'eslint_d', 'prettierd' })
-    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+    })
 
     require('mason-lspconfig').setup {
-      ensure_installed = {},
-      automatic_installation = false,
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
-        end,
+      ensure_installed = {
+        'clangd',
+        'tailwindcss',
+        'rust_analyzer',
+        'ts_ls',
+        'astro',
+        'svelte',
+        'phpactor',
+        'lua_ls',
       },
+    }
+
+    require('mason-tool-installer').setup {
+      ensure_installed = { 'stylua', 'eslint_d', 'prettierd' },
     }
   end,
 }

@@ -23,9 +23,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Load plugins
-require("lazy").setup("plugins", {
-  { import = 'plugins' },
-})
+require("lazy").setup("plugins")
 
 -- Setup keymaps
 -- (must happen after plugin load)
