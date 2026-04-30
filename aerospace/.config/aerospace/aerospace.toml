@@ -42,10 +42,7 @@ alt-f = 'fullscreen'
 
 alt-w = 'layout h_accordion' # 'layout tabbed' in i3
 alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+alt-shift-space = 'layout floating tiling'
 
 alt-shift-c = 'reload-config'
-
-[[on-window-detected]]
-if.window-title-regex-substring = 'App'
-run = 'layout floating'
 
