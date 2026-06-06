@@ -11,7 +11,7 @@ vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 50
 vim.opt.termguicolors = true
 
@@ -23,6 +23,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.undofile = true
 vim.o.breakindent = true
 vim.o.completeopt = 'menuone,noselect'
+vim.o.wrap = true
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
