@@ -8,6 +8,7 @@ with pkgs;
   btop
   cargo
   clippy
+  d2
   deno
   diffnav
   fnm
@@ -15,15 +16,18 @@ with pkgs;
   gh
   glow
   go
+  graphviz
   gum
   jq
   just
   lazygit
+  librsvg
   mermaid-cli
   neovim
   nixfmt
   ollama
   opencode
+  pandoc
   python314
   ripgrep
   rust-analyzer
@@ -34,9 +38,11 @@ with pkgs;
   slides
   stow
   stylua
+  tectonic
   tmux
   tree-sitter
   uv
+  vhs
   zig
   zoxide
 ]
