@@ -33,3 +33,7 @@ You're running in sandbox mode. If you come up against anything you cannot run b
 When writing iterations, always use caveman ultra
 
 When writing anything else, caveman lite
+
+# Team, Org etc
+
+see ~/workspace/engineering-management/context/team-structure.md
