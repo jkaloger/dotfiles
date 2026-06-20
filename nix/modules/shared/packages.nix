@@ -6,7 +6,9 @@ with pkgs;
   ast-grep
   astroterm
   btop
+  bun
   cargo
+  chromium
   clippy
   d2
   deno
