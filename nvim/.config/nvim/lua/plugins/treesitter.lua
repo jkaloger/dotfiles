@@ -8,6 +8,7 @@ return {
       'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx',
       'javascript', 'typescript', 'vimdoc', 'vim', 'bash',
       'svelte', 'markdown', 'markdown_inline', 'latex',
+      'astro', 'css', 'scss', 'toml',
     }
 
     require('nvim-treesitter').install(parsers)

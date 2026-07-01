@@ -7,6 +7,7 @@ packages=(
   zsh
   tmux
   ghostty
+  gh-dash
   nvim
   git
   lazygit

@@ -1,0 +1,41 @@
+{
+  "baseUrl": "http://localhost:5173",
+  "allowOrigins": ["http://localhost:5173"],
+  "outDir": "review",
+  "viewports": [
+    { "name": "desktop", "width": 1440, "height": 900, "scale": 2 },
+    { "name": "mobile", "width": 390, "height": 844, "scale": 2 }
+  ],
+  "sets": [
+    {
+      "id": "login",
+      "level": "page",
+      "label": "Login page",
+      "route": "/login",
+      "waitFor": "[data-testid=login-form]",
+      "intended": "review/shots/figma/login.png",
+      "findings": [],
+      "manual": ""
+    },
+    {
+      "id": "primary-button",
+      "level": "component",
+      "label": "Primary button",
+      "route": "/styleguide",
+      "clip": "[data-component=PrimaryButton]",
+      "intended": "review/shots/figma/primary-button.png"
+    },
+    {
+      "id": "login-error",
+      "level": "interaction",
+      "label": "Login validation error",
+      "route": "/login",
+      "steps": [
+        { "fill": "#email", "value": "not-an-email" },
+        { "click": "button[type=submit]" },
+        { "waitFor": "[role=alert]" }
+      ],
+      "intended": "review/shots/figma/login-error.png"
+    }
+  ]
+}

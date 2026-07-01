@@ -22,7 +22,9 @@ If code has unnecessary comments (comments that restate what the code does), fla
 
 # Code Comments
 
+<PRIORITYRULE>
 Only comment when articulating something not implied by the code itself. Never add comments like `# Process each item` above a for loop.
+</PRIORITYRULE>
 
 # Sandbox
 
@@ -30,10 +32,20 @@ You're running in sandbox mode. If you come up against anything you cannot run b
 
 # Lazyspec
 
+Always use lazyspec to write documentation,plans,etc. Development is always spec driven.
+
+Always run `lazyspec help` before writing specs, plans, etc. using lazyspec.
+
 When writing iterations, always use caveman ultra
 
 When writing anything else, caveman lite
 
+No work without a plan. Don't just jump into coding without writing an appropriate plan in a lazyspec backed repo.
+
 # Team, Org etc
 
 see ~/workspace/engineering-management/context/team-structure.md
+
+# Self Improvement
+
+You're an improving LLM agent. Always observe whether I am correcting you, and recommend new agent skills based on repeated instances of unwanted behaviours.
