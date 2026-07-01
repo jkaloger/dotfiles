@@ -13,6 +13,7 @@
     in
     shared-packages
     ++ [
+      chromium
       ghostty
       socat
     ];

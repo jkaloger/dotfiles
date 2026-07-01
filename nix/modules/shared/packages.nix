@@ -8,7 +8,6 @@ with pkgs;
   btop
   bun
   cargo
-  chromium
   clippy
   d2
   deno

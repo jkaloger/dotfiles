@@ -6,10 +6,15 @@ LOG_FILE="${TMPDIR:-/tmp}/new-worktree.log"
 
 log() { printf '[%s] %s\n' "$(date '+%H:%M:%S')" "$*" >> "$LOG_FILE"; }
 
-C_ACCENT="4"
+C_ACCENT="#9ece6a"
 C_DIM="8"
-C_ERR="1"
-C_OK="2"
+C_ERR="#f7768e"
+C_OK="#9ece6a"
+
+export GUM_CHOOSE_PADDING="0 2"
+export GUM_INPUT_PADDING="0 2"
+export GUM_FILTER_PADDING="0 2"
+export GUM_SPIN_PADDING="0 2"
 
 log "--- new run ---"
 
