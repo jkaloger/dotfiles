@@ -1,6 +1,6 @@
 ---
 name: writing-user-stories
-description: Use when decomposing a system, feature, epic, requirement, or spec into a backlog of user stories, or whenever about to write user stories or acceptance criteria during planning. Symptoms include "break this into stories", "write the backlog", "split this epic", stories that feel too big to estimate, or technical tasks masquerading as stories.
+description: You MUST use when writing a story/user story; when decomposing a system, feature, epic, requirement, or spec into a backlog of user stories, or whenever about to write user stories or acceptance criteria during planning. Symptoms include "break this into stories", "write the backlog", "split this epic", stories that feel too big to estimate, or technical tasks masquerading as stories.
 ---
 
 # Writing User Stories
