@@ -8,7 +8,7 @@ vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
 -- Plugin keymaps
 -- [Telescope]
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -42,7 +42,7 @@ vim.keymap.set('n', '<leader>cs', ':Copilot status<cr>', { desc = 'Copilot Statu
 -- vim.keymap.set('n', '<leader>y', require('minuet').make_blink_map)
 
 -- [Neotree]
-vim.keymap.set('n', '<leader>o', ':Neotree<cr>', { desc = 'Open neotree' })
+vim.keymap.set('n', '<leader><space>', ':Neotree<cr>', { desc = 'Open neotree' })
 
 -- [Cloak]
 vim.keymap.set('n', '<leader>cl', ':CloakToggle<cr>', { desc = 'Toggle cloak' })
@@ -54,10 +54,10 @@ vim.keymap.set('n', '<leader>gg', ':LazyGit<cr>', { desc = 'Open LazyGit' })
 vim.keymap.set('n', '<leader>cv', ':CsvViewToggle<cr>', { desc = 'Toggle CSV view' })
 
 -- [Neotest]
-vim.keymap.set('n', '<leader>tr', require("neotest").run.run, { desc = '[T]est [R]un nearest' });
-vim.keymap.set('n', '<leader>tw', require("neotest").watch.toggle, { desc = '[T]est [W]atch toggle' });
-vim.keymap.set('n', '<leader>ts', require("neotest").summary.toggle, { desc = '[T]est [S]ummary toggle' });
-vim.keymap.set('n', '<leader>tc', require("neotest").output_panel.toggle, { desc = '[T]est [C]onsole' });
+vim.keymap.set('n', '<leader>tr', require('neotest').run.run, { desc = '[T]est [R]un nearest' })
+vim.keymap.set('n', '<leader>tw', require('neotest').watch.toggle, { desc = '[T]est [W]atch toggle' })
+vim.keymap.set('n', '<leader>ts', require('neotest').summary.toggle, { desc = '[T]est [S]ummary toggle' })
+vim.keymap.set('n', '<leader>tc', require('neotest').output_panel.toggle, { desc = '[T]est [C]onsole' })
 
 -- [TreeSJ]
-vim.keymap.set('n', '<leader>cas', ':TSJJoin<cr>', { desc = '[C]ode [A]rray [S]plit' });
+vim.keymap.set('n', '<leader>cas', ':TSJJoin<cr>', { desc = '[C]ode [A]rray [S]plit' })
