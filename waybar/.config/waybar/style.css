@@ -1,0 +1,80 @@
+/* spaceduck theme, matching sketchybar/colors.sh */
+@define-color bg #0f111b;
+@define-color fg #ecf0c1;
+@define-color purple #7a5ccc;
+@define-color green #5ccc96;
+@define-color red #e33400;
+@define-color cyan #00a3cc;
+@define-color dark-purple #30365f;
+@define-color fg-dim alpha(#ecf0c1, 0.5);
+
+* {
+  font-family: "JetBrainsMono Nerd Font Mono";
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @bg;
+  border-top: 1px solid @dark-purple;
+  color: @fg;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  color: @fg-dim;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button.active {
+  color: @fg;
+}
+
+#window {
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+#custom-tmux {
+  color: @purple;
+  padding: 0 8px;
+}
+
+#clock {
+  padding: 0 8px;
+}
+
+#mpris {
+  color: @green;
+  padding: 0 8px;
+}
+
+#battery {
+  padding: 0 10px;
+}
+
+#battery.warning {
+  color: @red;
+}
+
+#battery.critical {
+  color: @red;
+  font-weight: bold;
+}
+
+#network {
+  color: @green;
+  padding: 0 10px;
+}
+
+#memory {
+  color: @purple;
+  padding: 0 10px;
+}
+
+#cpu {
+  color: @cyan;
+  padding: 0 10px;
+}

@@ -1,0 +1,67 @@
+// Mirrors sketchybar layout: workspaces/front-app/tmux left, clock/mpris center, battery/net/mem/cpu right
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 46,
+
+  "modules-left": ["hyprland/workspaces", "hyprland/window", "custom/tmux"],
+  "modules-center": ["clock", "mpris"],
+  "modules-right": ["battery", "network", "memory", "cpu"],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": [1, 2, 3]
+    }
+  },
+
+  "hyprland/window": {
+    "max-length": 40,
+    "separate-outputs": true
+  },
+
+  "custom/tmux": {
+    "exec": "~/.config/waybar/scripts/tmux.sh",
+    "return-type": "json",
+    "interval": 5,
+    "format": " {}"
+  },
+
+  "clock": {
+    "format": "{:%a %d %b %H:%M}",
+    "interval": 30
+  },
+
+  "mpris": {
+    "format": "󰎆 {title}",
+    "format-paused": "󰏤 {title}",
+    "max-length": 40
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "interval": 120
+  },
+
+  "network": {
+    "format-wifi": "󰛳 {bandwidthDownBytes}",
+    "format-ethernet": "󰛳 {bandwidthDownBytes}",
+    "format-disconnected": "󰲛 off",
+    "interval": 3
+  },
+
+  "memory": {
+    "format": " {percentage}%",
+    "interval": 5
+  },
+
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "interval": 5
+  }
+}

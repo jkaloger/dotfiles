@@ -11,7 +11,7 @@ return {
     require('neo-tree').setup {
       enable_git_status = true,
       window = {
-        position = 'float',
+        -- position = 'float',
       },
       event_handlers = {
 

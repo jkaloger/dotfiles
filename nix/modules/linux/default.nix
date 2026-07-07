@@ -14,7 +14,8 @@
     shared-packages
     ++ [
       chromium
-      ghostty
+      nerd-fonts.jetbrains-mono
       socat
     ];
+  fonts.fontconfig.enable = true;
 }

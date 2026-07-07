@@ -15,6 +15,9 @@ packages=(
   sketchybar
   btop
   claude
+  hypr
+  waybar
+  fuzzel
 )
 
 echo "🏠 Stowing dotfiles from $DOTFILES_DIR"

@@ -42,6 +42,7 @@ vim.keymap.set('n', '<leader>cs', ':Copilot status<cr>', { desc = 'Copilot Statu
 -- vim.keymap.set('n', '<leader>y', require('minuet').make_blink_map)
 
 -- [Neotree]
+vim.keymap.set('n', '<leader>o', ':Neotree<cr>', { desc = 'Open neotree' })
 vim.keymap.set('n', '<leader><space>', ':Neotree<cr>', { desc = 'Open neotree' })
 
 -- [Cloak]
