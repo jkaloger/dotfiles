@@ -4,9 +4,9 @@
   "position": "bottom",
   "height": 46,
 
-  "modules-left": ["hyprland/workspaces", "hyprland/window", "custom/tmux"],
-  "modules-center": ["clock", "mpris"],
-  "modules-right": ["battery", "network", "memory", "cpu"],
+  "modules-left": ["hyprland/workspaces", "custom/tmux"],
+  "modules-center": ["hyprland/window", "mpris"],
+  "modules-right": ["tray", "clock"],
 
   "hyprland/workspaces": {
     "format": "{name}",
@@ -18,6 +18,11 @@
   "hyprland/window": {
     "max-length": 40,
     "separate-outputs": true
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
   },
 
   "custom/tmux": {
@@ -33,35 +38,8 @@
   },
 
   "mpris": {
-    "format": "󰎆 {title}",
+    "format": "{title}",
     "format-paused": "󰏤 {title}",
     "max-length": 40
-  },
-
-  "battery": {
-    "format": "{icon} {capacity}%",
-    "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "interval": 120
-  },
-
-  "network": {
-    "format-wifi": "󰛳 {bandwidthDownBytes}",
-    "format-ethernet": "󰛳 {bandwidthDownBytes}",
-    "format-disconnected": "󰲛 off",
-    "interval": 3
-  },
-
-  "memory": {
-    "format": " {percentage}%",
-    "interval": 5
-  },
-
-  "cpu": {
-    "format": "󰍛 {usage}%",
-    "interval": 5
   }
 }

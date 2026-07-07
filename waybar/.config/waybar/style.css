@@ -9,72 +9,126 @@
 @define-color fg-dim alpha(#ecf0c1, 0.5);
 
 * {
-  font-family: "JetBrainsMono Nerd Font Mono";
-  font-size: 13px;
+  color: @fg;
+  border: none;
+  padding: 0;
   min-height: 0;
+  font-family: "JetBrainsMono Nerd Font Mono";
+  transition: background-color 0.3s ease-out;
 }
 
 window#waybar {
-  background: @bg;
-  border-top: 1px solid @dark-purple;
-  color: @fg;
+  background: transparent;
+}
+
+/* floating bar box: bottom position, so highlight border sits on top edge */
+#waybar > box {
+  background-color: @bg;
+  border-radius: 4px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  margin: 2px 4px 1px 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+  min-height: 15px;
+}
+
+.modules-left {
+  margin-left: 4px;
+}
+
+.modules-right {
+  margin-right: 4px;
 }
 
 #workspaces button {
-  padding: 0 10px;
-  color: @fg-dim;
+  min-width: 35px;
+  padding: 0;
+  margin: 3px 6px;
+  border: 0;
+  border-radius: 4px;
+  opacity: 0.65;
   background: transparent;
-  border: none;
-  border-radius: 0;
+  color: @fg-dim;
+  font-weight: 800;
+  font-size: 11px;
+  transition: all 0.15s ease-in-out;
 }
 
 #workspaces button.active {
   color: @fg;
+  min-width: 35px;
+  opacity: 1;
+  background: @dark-purple;
 }
 
-#window {
-  font-weight: bold;
-  padding: 0 8px;
+#workspaces button:hover {
+  color: @fg;
+  background-color: @purple;
+  min-width: 35px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#workspaces button.empty {
+  opacity: 0.65;
+  color: alpha(@fg, 0.45);
+}
+
+#custom-tmux,
+#custom-expand-icon,
+#pulseaudio,
+#bluetooth,
+#network,
+#memory,
+#cpu,
+#tray,
+#window,
+#clock,
+#mpris {
+  min-width: 12px;
+  padding: 0 4px;
+  margin: 0 3px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+#custom-expand-icon {
+  margin-right: 0;
+  opacity: 0.5;
 }
 
 #custom-tmux {
   color: @purple;
-  padding: 0 8px;
 }
 
-#clock {
-  padding: 0 8px;
+#window {
+  font-weight: bold;
 }
 
 #mpris {
   color: @green;
-  padding: 0 8px;
+  animation-name: blink;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-#battery {
-  padding: 0 10px;
+@keyframes blink {
+  to {
+    color: alpha(@green, 0.35);
+  }
 }
 
-#battery.warning {
-  color: @red;
+tooltip {
+  padding: 4px;
+  background: @bg;
+  font-size: 10px;
+  border: 1px solid alpha(@fg, 0.8);
+  border-radius: 8px;
 }
 
-#battery.critical {
-  color: @red;
-  font-weight: bold;
-}
-
-#network {
-  color: @green;
-  padding: 0 10px;
-}
-
-#memory {
-  color: @purple;
-  padding: 0 10px;
-}
-
-#cpu {
-  color: @cyan;
-  padding: 0 10px;
+tooltip label {
+  color: @fg;
+  font-weight: normal;
 }
