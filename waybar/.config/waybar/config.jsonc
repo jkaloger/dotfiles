@@ -38,8 +38,8 @@
   },
 
   "mpris": {
-    "format": "{title}",
-    "format-paused": "󰏤 {title}",
+    "format": "{title} - {artist}",
+    "format-paused": "󰏤 {title} - {artist}",
     "max-length": 40
   }
 }
