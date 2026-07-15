@@ -2,7 +2,7 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 46,
+  "height": 32,
 
   "modules-left": ["hyprland/workspaces", "custom/tmux"],
   "modules-center": ["hyprland/window", "mpris"],
