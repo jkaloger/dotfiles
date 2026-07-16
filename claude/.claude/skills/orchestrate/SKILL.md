@@ -7,9 +7,9 @@ description: Use when handed a set/batch of iterations, plans, or work slices to
 
 ## Overview
 
-You are handed a batch of iterations (or plans/work slices) and must drive them all to done in one run. This skill is the **orchestration loop**: resolve order from the dependency graph, then for each iteration run build → review → commit → advance, retrying review until green, until every unit is complete.
+You are handed a batch of plans/work slices (e.g. iterations, deltas) and must drive them all to done in one run. This skill is the **orchestration loop**: resolve order from the dependency graph, then for each iteration run build → review → commit → advance, retrying review until green, until every unit is complete.
 
-You are the orchestrator, not the implementer. Each iteration's build and each review run in their own subagent. You own ordering, status transitions, commits, and the done check.
+You are the orchestrator, not the implementer. Each iteration's build and each review run in their own subagent. If a work slice is very specific and detailed, you should use a model like sonnet, if it is more vague, consdier opus or fable. You own ordering, status transitions, commits, and the done check.
 
 **REQUIRED SUB-SKILLS:** `lazyspec:execute` (the per-iter build loop), `lazyspec:advance` (status transitions), `lazyspec:review` (the gate). Build subagents pull `testing`, `refactoring`, `type-driven-design` per the iteration's nature.
 
@@ -17,7 +17,7 @@ You are the orchestrator, not the implementer. Each iteration's build and each r
 
 The list you were given is **not** the execution order. Order comes from the `blocks`/`blocked-by` relations on the actual docs.
 
-1. Read the real edges: `lazyspec list iteration --json` and `lazyspec show <ID>` (or `lazyspec context`). Do not trust the prompt's table ordering or the iteration numbers.
+1. Read the real edges: `lazyspec list iteration --json` and `lazyspec show <ID>` and `lazyspec context`. Do not trust the prompt's table ordering or the iteration numbers.
 2. Build the DAG and topologically sort. An iteration is **eligible** iff every iteration it is `blocked-by` is already `complete`.
 3. Run sequentially in topo order — even when branches are independent. Iterations in a batch usually share files (router, app, store); parallel subagents collide and break "1 commit per iter". Take the cheaper deterministic path.
 
