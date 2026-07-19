@@ -4,9 +4,15 @@
   "position": "bottom",
   "height": 32,
 
-  "modules-left": ["hyprland/workspaces", "custom/tmux"],
+  "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/tmux"],
   "modules-center": ["hyprland/window", "mpris"],
   "modules-right": ["tray", "clock"],
+
+  "custom/launcher": {
+    "format": "",
+    "on-click": "fuzzel",
+    "tooltip": false
+  },
 
   "hyprland/workspaces": {
     "format": "{name}",
