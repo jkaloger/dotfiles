@@ -8,5 +8,6 @@ shared-packages
 ++ [
   aerospace
   ghostty-bin
+  kitty
   sketchybar
 ]

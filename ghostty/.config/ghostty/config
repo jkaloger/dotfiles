@@ -40,6 +40,31 @@ keybind = cmd+digit_7=text:\x017
 keybind = cmd+digit_8=text:\x018
 keybind = cmd+digit_9=text:\x019
 
+# inner (remote) tmux over ssh: add ctrl -> double prefix, targets nested session
+keybind = cmd+ctrl+t=text:\x01\x01c
+keybind = cmd+ctrl+n=text:\x01\x01c
+keybind = cmd+ctrl+w=text:\x01\x01x
+keybind = cmd+ctrl+tab=text:\x01\x01n
+keybind = cmd+ctrl+shift+left_bracket=text:\x01\x01p
+keybind = cmd+ctrl+shift+right_bracket=text:\x01\x01n
+keybind = cmd+ctrl+left=text:\x01\x01h
+keybind = cmd+ctrl+right=text:\x01\x01l
+keybind = cmd+ctrl+up=text:\x01\x01u
+keybind = cmd+ctrl+down=text:\x01\x01b
+keybind = cmd+ctrl+d=text:\x01\x01v
+keybind = cmd+ctrl+shift+d=text:\x01\x01S
+keybind = cmd+ctrl+enter=text:\x01\x01z
+keybind = cmd+ctrl+f=text:\x01\x01F
+keybind = cmd+ctrl+digit_1=text:\x01\x011
+keybind = cmd+ctrl+digit_2=text:\x01\x012
+keybind = cmd+ctrl+digit_3=text:\x01\x013
+keybind = cmd+ctrl+digit_4=text:\x01\x014
+keybind = cmd+ctrl+digit_5=text:\x01\x015
+keybind = cmd+ctrl+digit_6=text:\x01\x016
+keybind = cmd+ctrl+digit_7=text:\x01\x017
+keybind = cmd+ctrl+digit_8=text:\x01\x018
+keybind = cmd+ctrl+digit_9=text:\x01\x019
+
 image-storage-limit = 320000000
 
 font-size = 14

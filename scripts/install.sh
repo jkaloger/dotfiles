@@ -7,6 +7,7 @@ packages=(
   zsh
   tmux
   ghostty
+  kitty
   gh-dash
   nvim
   git
