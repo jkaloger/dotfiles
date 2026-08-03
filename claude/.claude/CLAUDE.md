@@ -45,6 +45,7 @@ No work without a plan. Don't just jump into coding without writing an appropria
 # Team, Org etc
 
 see ~/workspace/engineering-management/context/team-structure.md
+see ~/workspace/engineering-management/context/technology-landscape.md
 
 # Self Improvement
 
