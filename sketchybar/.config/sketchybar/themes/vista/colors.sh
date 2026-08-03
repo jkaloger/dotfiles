@@ -1,0 +1,11 @@
+#!/bin/bash
+
+export V_BAR=0xE0061428
+export V_TEXT=0xFFFFFFFF
+export V_BTN=0x22FFFFFF
+export V_BTN_BORDER=0x33FFFFFF
+export V_BTN_ACTIVE=0x5578B7E0
+export V_BTN_ACTIVE_BORDER=0x88A8D8F0
+export V_BTN_HOVER=0x38FFFFFF
+export V_TRAY_BG=0x18FFFFFF
+export V_FONT="JetBrainsMono Nerd Font Mono"
