@@ -1,0 +1,19 @@
+[sprite]
+dir = "/Users/jkaloger/thezone/statusline-sprite/test-sprites"
+tiers = 5
+scale_tokens = 250000
+box_cols = 6
+fps = 10                      
+max_frames = 65               
+
+[line1]
+command = "STARSHIP_SHELL= starship prompt"
+
+[line2]
+color = 213                                   # colors the model segment (also used when segments is unset)
+segments = ["model", "context", "cost"]       # render order; unknown names ignored; unset defaults to model only
+colors = [202, 2,3,4,5]                        # per-position palette index, aligned with segments; -1 = unstyled
+separator = "  "                              # string inserted between rendered segments (default: two spaces)
+
+[line3]
+command = "$HOME/.local/bin/hydra-statusline"   # no inner quotes: parseString stops at the next "

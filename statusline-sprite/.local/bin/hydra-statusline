@@ -1,0 +1,22 @@
+#!/bin/sh
+PATH="$HOME/.nix-profile/bin:$HOME/.cargo/bin:/opt/homebrew/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:$PATH"
+
+command -v jq >/dev/null || exit 0
+
+status=$(hydra status 2>/dev/null)
+[ -n "$status" ] || exit 0
+
+next=$(hydra next 2>/dev/null)
+
+printf '%s\n' "$status" | jq -r --argjson n "${next:-null}" --arg nocolor "${NO_COLOR:-}" '
+  def c(n; s): if $nocolor != "" then s else "\u001b[38;5;\(n)m\(s)\u001b[0m" end;
+
+  "🐙 " + c(141; .tree) +
+  (if .done then " " + c(42; "✓")
+   else " " + c(245; "\(.answered)/\(.answered + .open)")
+        + (if $n then " " + c(240; "→") + " " + c(79; $n.slug | if length > 24 then .[:23] + "…" else . end) else "" end)
+        + (if .blocked > 0 then " " + c(203; "⊘ \(.blocked)") else "" end)
+   end)
+' 2>/dev/null
+
+exit 0
