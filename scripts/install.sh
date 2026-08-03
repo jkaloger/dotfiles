@@ -6,6 +6,7 @@ DOTFILES_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 packages=(
   zsh
   tmux
+  sesh
   ghostty
   kitty
   gh-dash
@@ -14,6 +15,7 @@ packages=(
   lazygit
   aerospace
   sketchybar
+  statusline-sprite
   btop
   claude
   hypr
