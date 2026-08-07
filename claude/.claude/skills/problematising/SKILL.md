@@ -1,6 +1,6 @@
 ---
 name: problematising
-description: Use when a brief, plan or OKR states its problem as a judgement about people or an organisation held against a norm nobody wrote down — "engineers aren't shipping enough", "deploys are too slow", "ramp time is three months", "the team isn't aligned" — especially when that judgement is fenced from discussion. Also use mid-interview when an answer only makes sense because of an assumption nobody has stated. Not for a failure against a threshold someone can point at.
+description: Use when a brief, plan or OKR states its problem as a judgement about a system, a codebase or the people who build it, held against a norm nobody wrote down — "the codebase is unmaintainable", "we have too much tech debt", "the test suite is too slow", "coverage is too low", "nobody owns the frontend platform", "we are behind the industry benchmark" — especially when that judgement is fenced from discussion. Also use mid-interview when an answer only makes sense because of an assumption nobody has stated. Not for a failure against a threshold someone can point at.
 ---
 
 # Problematising
@@ -15,15 +15,19 @@ Problematising asks how this came to be a problem, here, now, for these people, 
 
 One test on the problem statement: **the norm inside it — did somebody choose it, or did somebody write it down?**
 
-| Problem statement                                 | The norm                                  | Fires |
-| ------------------------------------------------- | ----------------------------------------- | ----- |
-| "Engineers aren't shipping enough"                | Enough against what? Nobody set it        | yes   |
-| "New hires take 3 months to be productive"        | Long against what? Nobody set it          | yes   |
-| "Deploys are too slow"                            | Slow against what? Nobody set it          | yes   |
-| "Handler 500s, provider gives up after 3 retries" | The provider's retry budget, written down | no    |
-| "8M rows won't render inside the 30s timeout"     | A number in a config file                 | no    |
+| Problem statement                                 | The norm                                     | Fires |
+| ------------------------------------------------- | -------------------------------------------- | ----- |
+| "The codebase is unmaintainable"                  | Maintainable against what? Nobody set it     | yes   |
+| "We have too much tech debt"                      | Debt against which principal? Nobody set it  | yes   |
+| "Coverage is too low"                             | 80% arrived from elsewhere; nobody set it here | yes |
+| "The test suite is too slow"                       | Slow against what? Nobody set it             | yes   |
+| "p95 is 800ms; the industry benchmark is 200ms"   | A benchmark from elsewhere; nobody set it here | yes |
+| "Nobody owns the frontend platform"               | Ownership norm nobody wrote down             | yes   |
+| "p99 breached the 200ms SLO in the contract"      | A number two parties signed                  | no    |
+| "Handler 500s, provider gives up after 3 retries" | The provider's retry budget, written down    | no    |
+| "8M rows won't render inside the 30s timeout"     | A number in a config file                    | no    |
 
-It fires on a judgement about people or an organisation, held against a norm nobody wrote down. It does not fire on a failure against a threshold someone outside the room can point at — that problem is a fact, and a fact has nothing to problematise. Most tickets are facts.
+It fires on a judgement about a system, a codebase or the people who build it, held against a norm nobody wrote down. It does not fire on a failure against a threshold someone outside the room can point at — that problem is a fact, and a fact has nothing to problematise. Most tickets are facts.
 
 **Scope fencing is not framing fencing.** "Product has agreed the feature", "this is the build design", "the ticket lists three candidate fixes" are ordinary scoping and do not fire it. What fires it is the _judgement_ being fenced: "the why is settled", "don't relitigate", "leadership signed off on the problem".
 
@@ -35,7 +39,7 @@ Produce all five, in order, in one turn. One or two sentences each, in the user'
 
 1. **Name the object.** What does this framing treat as a thing that existed before anyone measured it? Quote the brief's word for it.
 2. **Date it.** When did this become sayable here, and what changed just before — a round, a hire, a board deck, a practice that arrived from elsewhere? Every problem has an arrival date.
-3. **Name what produces it.** What has to already be running for this to register as a problem at all? Sprint boards produce velocity. Review cycles produce comparable individuals. The practice comes first; the problem is its residue.
+3. **Name what produces it.** What has to already be running for this to register as a problem at all? Coverage tools produce untested code. Static analysis produces complexity. Dependency dashboards produce debt. The practice comes first; the problem is its residue.
 4. **Name who it distributes.** Whose problem is this and whose is it not? Who becomes visible, to whom, and accountable for what?
 5. **Name what it forecloses.** With this framing in force, what can no longer be said in the room? Say that thing out loud.
 
@@ -73,7 +77,7 @@ Use the user's nouns. Never "genealogy", "discourse", "power/knowledge", "regime
 
 | Neighbour         | It asks                     | Problematising asks                                             |
 | ----------------- | --------------------------- | --------------------------------------------------------------- |
-| Evidence critique | Is n=2 enough?              | What makes a 30-day survey count as evidence at all?            |
+| Evidence critique | Is n=2 enough?              | What makes a two-week trace sample count as evidence at all?    |
 | Goodhart's law    | Will the metric be gamed?   | What does the metric bring into being that wasn't there before? |
 | Root cause        | What's the real cause?      | What had to be in place for that to count as a cause?           |
 | Five whys         | Why — going down            | Where from — going backwards and sideways                       |
