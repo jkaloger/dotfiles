@@ -129,6 +129,8 @@ return {
         'tailwindcss',
         'rust_analyzer',
         'ts_ls',
+        'jsonls',
+        'yamlls',
         'astro',
         'svelte',
         'phpactor',
@@ -139,5 +141,8 @@ return {
     require('mason-tool-installer').setup {
       ensure_installed = { 'stylua', 'eslint_d', 'prettierd' },
     }
+
+    -- Provisioned by nix (modules/shared/packages.nix), not mason
+    vim.lsp.enable 'nixd'
   end,
 }

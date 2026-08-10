@@ -25,6 +25,7 @@ with pkgs;
   librsvg
   mermaid-cli
   neovim
+  nixd
   nixfmt
   ollama
   opencode

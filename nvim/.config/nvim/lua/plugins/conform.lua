@@ -10,6 +10,8 @@ return {
         javascriptreact = { 'eslint_d', 'prettierd' },
         astro = { 'eslint_d', 'prettierd' },
         json = { 'prettierd' },
+        yaml = { 'prettierd' },
+        nix = { 'nixfmt' },
         html = { 'prettierd' },
         css = { 'prettierd' },
         scss = { 'prettierd' },
