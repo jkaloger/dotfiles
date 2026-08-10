@@ -26,6 +26,14 @@ If code has unnecessary comments (comments that restate what the code does), fla
 Only comment when articulating something not implied by the code itself. Never add comments like `# Process each item` above a for loop.
 </PRIORITYRULE>
 
+<PRIORITYRULE>
+When you add a multi line comment, consider; is this block better as a named function. Function names can illuminate the intent better than a comment.
+</PRIORITYRULE>
+
+# Code style
+
+Prefer early returns over nesting
+
 # Sandbox
 
 You're running in sandbox mode. If you come up against anything you cannot run but NEED to progress, finish everything you can and then stop and ask me to run it.
@@ -40,7 +48,7 @@ When writing iterations, always use caveman ultra
 
 When writing anything else, caveman lite
 
-No work without a plan. Don't just jump into coding without writing an appropriate plan in a lazyspec backed repo.
+No code without a plan. Don't just jump into coding without writing an appropriate plan in a lazyspec backed repo. This does not apply for knowledge repos.
 
 # Context Discipline
 

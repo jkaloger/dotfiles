@@ -1,0 +1,14 @@
+# sesh sessions. picker: C-a k
+# name each remote twice: plain (non-nested, no persistence) + persist (nested, survives ssh drop)
+
+# --- box: jack@192.168.1.64 ---
+
+# plain ssh: single local tmux, cmd+ binds native, NO nesting. lost on disconnect.
+[[session]]
+name = "🌐 box"
+startup_command = "ssh -t jack@192.168.1.64"
+
+# persistent: remote tmux 'main' (new-or-attach). nests -> use F12 to drive it direct.
+[[session]]
+name = "🌐 box (persist)"
+startup_command = "ssh -t jack@192.168.1.64 'tmux new -A -s main'"

@@ -36,3 +36,6 @@ nix/result
 
 # local docs
 docs/
+
+.hydra
+nvim.log
